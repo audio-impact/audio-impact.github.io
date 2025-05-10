@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IMPACT: Iterative Mask-based PArallel DeCoding for Text-to-Audio Generation with Diffusion Modeling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #1a1a1a;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .author-list {
+      text-align: center;
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .abstract, .acknowledgements {
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+    .abstract-title {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .salient-features {
+      margin: 20px auto;
+      max-width: 800px;
+      background-color: #f0f4ff;
+      padding: 15px;
+      border-left: 4px solid #0073e6;
+    }
+    .salient-features h3 {
+      margin-top: 0;
+      font-weight: bold;
+      color: #333;
+    }
+    .salient-features ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .links {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #0073e6;
+      font-weight: bold;
+    }
+    img.diagram {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+    table {
+      width: 100%;
+      max-width: 1000px;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+      font-weight: bold;
+    }
+    audio {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>IMPACT: Iterative Mask-based PArallel DeCoding for Text-to-Audio Generation with Diffusion Modeling</h1>
+  <div class="author-list">
+    Kuan-Po Huang, Shu-wen Yang, Huy Phan, Bo-Ru Lu, Byeonggeun Kim, Sashank Macha, Qingming Tang,<br>
+    Shalini Ghosh, Hung-yi Lee, Chieh-Chi Kao, Chao Wang<br>
+    Amazon, National Taiwan University
+  </div>
+
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    <p>
+      Text-to-audio generation synthesizes realistic sounds or music given a natural language prompt. Diffusion-based frameworks, including the Tango and the AudioLDM series, represent the state of the art in text-to-audio generation. Despite achieving high audio fidelity, they incur significant inference latency due to the slow diffusion sampling process. MAGNET, a mask-based model operating on discrete tokens, addresses slow inference through iterative mask-based parallel decoding. However its audio quality still lags behind the diffusion-based models. In this work, we introduce IMPACT, a text-to-audio generation framework that achieves high performance in audio quality and fidelity while ensuring fast inference. IMPACT utilizes iterative mask-based parallel decoding in a continuous latent space powered by diffusion modeling. This approach eliminates the fidelity constraints of discrete tokens while maintaining competitive inference speed. Results on AudioCaps demonstrate that IMPACT achieves state-of-the-art performance on key metrics including Fréchet Distance (FD) and Fréchet Audio Distance (FAD) while significantly reducing latency compared to prior models.
+    </p>
+  </div>
+
+  <div class="salient-features">
+    <h3>Special Features</h3>
+    <ul>
+      <li><strong>State-of-the-art performance</strong> in key metrics FD and FAD on the AudioCaps evaluation set.</li>
+      <li><strong>Faster generation</strong> compared to AudioLDM2, the Tango series, MAGNET and all other baseline models.</li>
+    </ul>
+  </div>
+
+  <!-- Diagram image -->
+  <img class="diagram" src="IMPACT_diagram.png" alt="IMPACT Diagram">
+
+  <!-- Optional links -->
+  <div class="links">
+    <!-- <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">[Paper on arXiv]</a> -->
+    <a href="paper.pdf" target="_blank">[Download Paper PDF]</a>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>IMPACT-base</th>
+        <th>IMPACT-large</th>
+        <th>MAGNET-s</th>
+        <th>AudioLDM2</th>
+        <th>Tango 2</th>
+        <th>Ground Truth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--
+        Repeat one <tr> per example. Make sure your directory structure is:
+        demos_20/
+          ├ demo_mar_base_ACWC_wav/
+          │    ├ file1.wav
+          │    └ file2.wav
+          ├ demo_mar_large_ACWC_wav/
+          ├ demo_magnet_s_wav/
+          ├ audioldm2_full_demo_wav/
+          ├ demo_tango2_wav/
+          ├ demo_ground_truth_wav/
+          └ demo_text/
+               ├ file1.txt
+               └ file2.txt
+      -->
+      <tr>
+        <td>“A dog barking in the park.”</td>
+        <td>
+          <audio controls>
+            <source src="demos_20/demo_mar_base_ACWC_wav/file1.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="demos_20/demo_mar_large_ACWC_wav/file1.wav" type="audio/wav">
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="demos_20/demo_magnet_s_wav/file1.wav" type="audio/wav">
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="demos_20/audioldm2_full_demo_wav/file1.wav" type="audio/wav">
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="demos_20/demo_tango2_wav/file1.wav" type="audio/wav">
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="demos_20/demo_ground_truth_wav/file1.wav" type="audio/wav">
+          </audio>
+        </td>
+      </tr>
+
+      <!-- Copy and paste the above <tr> block, updating file names and descriptions, for each demo file. -->
+    </tbody>
+  </table>
+
+  <div class="acknowledgements">
+    This work was done by Kuan-Po Huang during his internship at Amazon in 2024.
+  </div>
+
+</body>
+</html>
