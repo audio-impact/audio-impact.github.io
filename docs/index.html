@@ -91,41 +91,311 @@
     audio {
       width: 200px;
     }
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 10px;
+      padding: 8px 14px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #333;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background-color 0.3s ease;
+    }
+    .links a i {
+      margin-right: 8px;
+    }
+    .links a:hover {
+      background-color: #555;
+    }
+    .author-list {
+      text-align: center;
+      color: #1a73e8; /* Google-style light blue */
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+    .author-list a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 </head>
 <body>
 
-  <h1>IMPACT: Iterative Mask-based PArallel DeCoding for Text-to-Audio Generation with Diffusion Modeling</h1>
-  <div class="author-list">
-    Kuan-Po Huang, Shu-wen Yang, Huy Phan, Bo-Ru Lu, Byeonggeun Kim, Sashank Macha, Qingming Tang,<br>
-    Shalini Ghosh, Hung-yi Lee, Chieh-Chi Kao, Chao Wang<br>
+  <h1 style="text-align:center; font-size: 46px; margin-bottom: 10px; margin-top: 30px;">
+    <span style="color: rgb(80, 80, 80); font-weight: bold;">IMPACT</span>
+  </h1>
+  <div style="text-align:center; font-size:30px; margin-top:10px;">
+    <span style="color:blue; font-weight:bold;">I</span><span style="color: rgb(80, 80, 80);">terative</span> 
+    <span style="color:blue; font-weight:bold;">M</span><span style="color: rgb(80, 80, 80);">ask-based</span> 
+    <span style="color:blue; font-weight:bold;">PA</span><span style="color: rgb(80, 80, 80);">rallel </span>
+    <span style="color: rgb(80, 80, 80);">De</span><span style="color:blue; font-weight:bold;">C</span><span style="color: rgb(80, 80, 80);">oding for </span>
+    <span style="color:blue; font-weight:bold;">T</span><span style="color: rgb(80, 80, 80);">ext-to-Audio Generation with Diffusion Modeling</span>
+  </div>
+
+  <div class="author-list" style="
+    margin-top: 20px;
+    color: rgb(80, 80, 80);
+    font-size: 20px;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+  ">
+    <a href="https://scholar.google.com/citations?user=cgTcTMoAAAAJ" target="_blank" style="color: #1a73e8; text-decoration: none;">Kuan-Po Huang</a><span>, </span>
+    <span style="color: #1a73e8;">Shu-wen Yang</span><span>, </span>
+    <span style="color: #1a73e8;">Huy Phan</span><span>, </span>
+    <span style="color: #1a73e8;">Bo-Ru Lu</span><span>, </span>
+    <span style="color: #1a73e8;">Byeonggeun Kim</span><span>, </span>
+    <span style="color: #1a73e8;">Sashank Macha</span><span>, </span>
+    <span style="color: #1a73e8;">Qingming Tang</span><span>,<br></span>
+    <span style="color: #1a73e8;">Shalini Ghosh</span><span>, </span>
+    <span style="color: #1a73e8;">Hung-yi Lee</span><span>, </span>
+    <span style="color: #1a73e8;">Chieh-Chi Kao</span><span>, </span>
+    <span style="color: #1a73e8;">Chao Wang</span><br>
     Amazon, National Taiwan University
   </div>
-
-  <div class="abstract">
-    <div class="abstract-title">Abstract</div>
-    <p>
-      Text-to-audio generation synthesizes realistic sounds or music given a natural language prompt. Diffusion-based frameworks, including the Tango and the AudioLDM series, represent the state of the art in text-to-audio generation. Despite achieving high audio fidelity, they incur significant inference latency due to the slow diffusion sampling process. MAGNET, a mask-based model operating on discrete tokens, addresses slow inference through iterative mask-based parallel decoding. However its audio quality still lags behind the diffusion-based models. In this work, we introduce IMPACT, a text-to-audio generation framework that achieves high performance in audio quality and fidelity while ensuring fast inference. IMPACT utilizes iterative mask-based parallel decoding in a continuous latent space powered by diffusion modeling. This approach eliminates the fidelity constraints of discrete tokens while maintaining competitive inference speed. Results on AudioCaps demonstrate that IMPACT achieves state-of-the-art performance on key metrics including Fréchet Distance (FD) and Fréchet Audio Distance (FAD) while significantly reducing latency compared to prior models.
-    </p>
-  </div>
-
-  <div class="salient-features">
-    <h3>Special Features</h3>
-    <ul>
-      <li><strong>State-of-the-art performance</strong> in key metrics FD and FAD on the AudioCaps evaluation set.</li>
-      <li><strong>Faster generation</strong> compared to AudioLDM2, the Tango series, MAGNET and all other baseline models.</li>
-    </ul>
-  </div>
-
-  <!-- Diagram image -->
-  <img class="diagram" src="imgs/IMPACT_diagram.png" alt="IMPACT Diagram">
+  
 
   <!-- Links to resources -->
   <div class="links">
-    <a href="paper.pdf" target="_blank">Download Paper PDF</a>
-    <a href="https://github.com/audio-impact/audio-impact" target="_blank">Code</a>
+    <a href="https://arxiv.org/abs/2506.00736" target="_blank">
+      <i class="fas fa-file-alt"></i> arXiv
+    </a>
+    <a href="https://github.com/audio-impact/audio-impact" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://youtu.be/OVcOcoVr6I4" target="_blank">
+      <i class="fab fa-youtube"></i> Video
+    </a>
   </div>
 
+  <!-- Background wrapper that spans the whole page -->
+  <div style="background-color: #f9f9f9; padding: 60px 0;">
+
+    <!-- Centered abstract section -->
+    <section id="abstract" style="max-width: 960px; margin: 0 auto; padding: 0 20px;">
+      <div style="display: flex; flex-direction: column;">
+        <h2 style="
+          font-size: 32px;
+          font-weight: bold;
+          text-align: left;
+          margin-bottom: 20px;
+          color: #333;
+        ">
+          Abstract
+        </h2>
+        <p style="
+          font-size: 18px;
+          line-height: 1.75;
+          color: #444;
+          text-align: justify;
+        ">
+          Text-to-audio generation synthesizes realistic sounds or music given a natural language prompt.
+          Diffusion-based frameworks, including the Tango and the AudioLDM series, represent the state of the art in text-to-audio generation.
+          Despite achieving high audio fidelity, they incur significant inference latency due to the slow diffusion sampling process.
+          MAGNET, a mask-based model operating on discrete tokens, addresses slow inference through iterative mask-based parallel decoding.
+          However its audio quality still lags behind the diffusion-based models.
+          In this work, we introduce IMPACT, a text-to-audio generation framework that achieves high performance in audio quality and fidelity while ensuring fast inference.
+          IMPACT utilizes iterative mask-based parallel decoding in a continuous latent space powered by diffusion modeling.
+          This approach eliminates the fidelity constraints of discrete tokens while maintaining competitive inference speed.
+          Results on AudioCaps demonstrate that IMPACT achieves state-of-the-art performance on key metrics including Fréchet Distance (FD) and Fréchet Audio Distance (FAD) while significantly reducing latency compared to prior models.
+        </p>
+
+        <!-- Special Features Block -->
+        <div style="
+          margin-top: 30px;
+          background-color: #f0f4ff;
+          border-left: 4px solid #0073e6;
+          padding: 16px 20px;
+          font-size: 16px;
+          color: #333;
+        ">
+          <strong>Special Features</strong><br>
+          <strong>State-of-the-art performance</strong> in key metrics FD and FAD on the AudioCaps evaluation set.<br>
+          <strong>Faster generation</strong> compared to AudioLDM2, the Tango series, MAGNET and all other baseline models.
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- IMPACT Diagram -->
+  <div style="
+  background-color: white;
+  padding: 30px 0;
+  ">
+  <div style="
+    max-width: 1500px;  /* Slightly wider than the abstract (960px) */
+    margin: 0 auto;
+    padding: 0 20px;
+  ">
+    <h2 style="
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    ">
+      Diagram of IMPACT
+    </h2>
+    <img class="diagram" src="imgs/IMPACT_diagram.png" alt="IMPACT Diagram" style="
+      max-width: 100%;
+      width: 85%;
+      height: auto;
+    ">
+    <div style="
+      max-width: 1050px;
+      margin: 20px auto 0 auto;
+      font-size: 18px;
+      color: #444;
+      text-align: left;
+      line-height: 1.6;
+    ">
+      <ul style="padding-left: 20px;">
+        <li><strong>Training phase:</strong> Mask generative modeling</li>
+        <li>
+          <strong>Inference phase:</strong> Generate a sequence of latents
+          <ul>
+            <li>
+              A key point here is to gradually generate the sequence throughout an iterative process. In the beginning, the model starts with a sequence with all mask embeddings. At each iteration, a randomly selected portion of positions is predicted and served as the input for the next iteration. The process stops until all positions are predicted.
+            </li>
+            <li>
+              The reason for doing so is that latents generated at later iterations can leverage the content predicted in early iterations as conditions.
+            </li>
+          </ul>
+        </li>
+      </ul>
+  </div>  
+  </div>
+  </div>
+
+  <!-- IMPACT's Latency vs FAD, KL -->
+  <div style="
+  background-color: white;
+  padding: 30px 0;
+  ">
+  <div style="
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+  ">
+    <h2 style="
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    ">
+      IMPACT's Latency vs FAD↓, KL↓
+    </h2>
+    <div style="text-align: center;">
+      <img class="diagram" src="imgs/latency_FAD_KL.png" alt="IMPACT's Latency vs FAD, KL" style="
+        max-width: 100%;
+        width: 85%;
+        height: auto;
+      ">
+    </div>
+    <h3 style="
+      max-width: 1000px;
+      margin: 20px auto 0 auto;
+      font-size: 20px;
+      color: #444;
+      text-align: left;
+      line-height: 1.6;
+    ">
+      All models that fall in the green area mean that they are faster than MAGNET and performing better than MAGNET on objective metrics.
+    </h3>
+    <h3 style="
+      max-width: 1000px;
+      margin: 4px auto 0 auto;
+      font-size: 20px;
+      color: #444;
+      text-align: left;
+    ">
+      (Latency: Required time for generating a batch of 8 audios, measured in seconds with a single V100 GPU.)
+    </h3>
+  </div>
+  </div>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+  
+      <!-- Heading + Button -->
+      <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
+        <h2 class="title" style="font-size: 28px; font-weight: bold; color: #333; margin: 0;">
+          Consider citing our paper if you find it useful
+        </h2>
+        <button onclick="copyBibtex()" style="
+          background-color: #b2bac4;
+          color: white;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 14px;
+        ">Copy BibTeX</button>
+      </div>
+  
+      <!-- BibTeX block -->
+      <pre id="bibtex" style="
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        overflow-x: auto;
+      "><code>@article{huang2025impact,
+    title     = {IMPACT: Iterative Mask-based Parallel Decoding for Text-to-Audio Generation with Diffusion Modeling},
+    author    = {Huang, Kuan-Po and Yang, Shu-wen and Phan, Huy and Lu, Bo-Ru and Kim, Byeonggeun and Macha, Sashank and Tang, Qingming and Ghosh, Shalini and Lee, Hung-yi and Kao, Chieh-Chi and others},
+    journal   = {arXiv preprint arXiv:2506.00736},
+    year      = {2025},
+  }</code></pre>
+    </div>
+  </section>
+  
+  <!-- Copy script -->
+  <script>
+  function copyBibtex() {
+    const bibtexText = document.getElementById("bibtex").innerText;
+    navigator.clipboard.writeText(bibtexText).then(() => {
+      alert("BibTeX copied to clipboard!");
+    });
+  }
+  </script>  
+
+  <footer style="
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #444;
+  font-size: 16px;
+  ">
+  <!-- Icons (LinkedIn + Personal Website) -->
+  <div style="margin-bottom: 12px;">
+    <a href="https://www.linkedin.com/in/kuanpo/" target="_blank" style="margin: 0 10px; color: black;">
+      <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+    <a href="https://nobel861017.github.io/" target="_blank" style="margin: 0 10px; color: black;">
+      <i class="fas fa-globe fa-2x"></i>
+    </a>
+  </div>
+
+  <!-- Message -->
+  <p>This work was done by Kuan-Po Huang during his internship at Amazon in 2024.</p>
+  </footer>
+
+  
+  <!--
   <table>
     <thead>
       <tr>
@@ -139,7 +409,6 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Example row; duplicate/update for each file -->
       <tr>
         <td>“A dog barking in the park.”</td>
         <td>
@@ -173,13 +442,9 @@
           </audio>
         </td>
       </tr>
-      <!-- …more rows… -->
     </tbody>
   </table>
-
-  <div class="acknowledgements">
-    This work was done by Kuan-Po Huang during his internship at Amazon in 2024.
-  </div>
+  -->
 
 </body>
 </html>
