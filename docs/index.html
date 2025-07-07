@@ -73,7 +73,7 @@
     }
     table {
       width: 100%;
-      max-width: 1000px;
+      max-width: 1500px;
       margin: 20px auto;
       border-collapse: collapse;
     }
@@ -123,6 +123,55 @@
       text-decoration: none;
     }
 
+    /* Container to center the table and limit its width */
+    .audio-table-wrapper {
+      max-width: 1500px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* The table itself */
+    table.audio-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Header cells */
+    table.audio-table th {
+      text-align: left;
+      padding: 12px 8px;
+      font-weight: bold;
+      color: #333;
+      border-bottom: 2px solid #ddd;
+    }
+
+    /* Body cells */
+    table.audio-table td {
+      padding: 12px 8px;
+      vertical-align: middle;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Center all columns except the first one */
+    table.audio-table td:nth-child(n+2),
+    table.audio-table th:nth-child(n+2) {
+      text-align: center;
+      width: 150px; /* each audio column gets equal width */
+    }
+
+    /* Make the description column a bit wider */
+    table.audio-table td:first-child,
+    table.audio-table th:first-child {
+      width: auto;
+      font-size: 16px;
+      color: #444;
+    }
+
+    /* Fix the audio player width */
+    table.audio-table audio {
+      width: 140px;
+    }
+
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -167,11 +216,11 @@
     <a href="https://arxiv.org/abs/2506.00736" target="_blank">
       <i class="fas fa-file-alt"></i> arXiv
     </a>
-    <a href="https://github.com/audio-impact/audio-impact" target="_blank">
-      <i class="fab fa-github"></i> GitHub
-    </a>
     <a href="https://youtu.be/OVcOcoVr6I4" target="_blank">
       <i class="fab fa-youtube"></i> Video
+    </a>
+    <a href="https://github.com/audio-impact/audio-impact" target="_blank">
+      <i class="fab fa-github"></i> GitHub
     </a>
   </div>
 
@@ -324,6 +373,152 @@
   </div>
   </div>
 
+  <div class="audio-table-wrapper">
+    <table class="audio-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>IMPACT Base</th>
+          <th>IMPACT Large</th>
+          <th>MAGNET-s</th>
+          <th>AudioLDM2</th>
+          <th>Tango 2</th>
+          <th>Ground Truth</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Machine grinding wood</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00024.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00024.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00024.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00024.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00024.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00024.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>Firecrackers popping as a crowd of people cheer and whistle</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00030.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00030.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00030.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00030.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00030.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00030.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>A dog barks with distant birds chirping then people speak</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00034.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00034.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00034.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00034.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00034.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00034.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>A baby laughing loudly</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00042.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00042.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00042.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00042.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00042.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00042.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>A person is snoring</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00046.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00046.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00046.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00046.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00046.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00046.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>Bird chirping while waves come in with high wind</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00052.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00052.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00052.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00052.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00052.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00052.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>Helicopter engine running</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00077.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00077.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00077.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00077.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00077.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00077.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>Several gunshots with a click and glass breaking</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00083.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00083.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00083.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00083.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00083.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00083.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>
+            Train horns honking as wind blows into a microphone while a group of people 
+            talk and an electronic beep repeatedly sounds during a vehicle engine running idle
+          </td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00084.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00084.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00084.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00084.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00084.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00084.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>A crowd murmurs as a siren blares and then stops at a distance</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00091.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00091.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00091.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00091.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00091.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00091.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>Church bells ringing</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00092.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00092.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00092.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00092.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00092.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00092.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>Birds chirping and water trickling</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00097.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00097.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00097.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00097.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00097.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00097.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>Emergency sirens wail as a truck engine accelerates and drives by</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00103.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00103.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00103.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00103.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00103.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00103.wav"></audio></td>
+        </tr>
+        <tr>
+          <td>Very strong wind is blowing, and leaves are rustling on the trees</td>
+          <td><audio controls src="demos_14/demo_mar_base_ACWC_wav/00104.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_mar_large_ACWC_wav/00104.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_magnet_s_wav/00104.wav"></audio></td>
+          <td><audio controls src="demos_14/audioldm2_full_demo_wav/00104.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_tango2_wav/00104.wav"></audio></td>
+          <td><audio controls src="demos_14/demo_ground_truth_wav/00104.wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
@@ -393,58 +588,6 @@
   <!-- Message -->
   <p>This work was done by Kuan-Po Huang during his internship at Amazon in 2024.</p>
   </footer>
-
-  
-  <!--
-  <table>
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>IMPACT-base</th>
-        <th>IMPACT-large</th>
-        <th>MAGNET-s</th>
-        <th>AudioLDM2</th>
-        <th>Tango 2</th>
-        <th>Ground Truth</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>“A dog barking in the park.”</td>
-        <td>
-          <audio controls>
-            <source src="demos_20/demo_mar_base_ACWC_wav/file1.wav" type="audio/wav">
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="demos_20/demo_mar_large_ACWC_wav/file1.wav" type="audio/wav">
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="demos_20/demo_magnet_s_wav/file1.wav" type="audio/wav">
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="demos_20/audioldm2_full_demo_wav/file1.wav" type="audio/wav">
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="demos_20/demo_tango2_wav/file1.wav" type="audio/wav">
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="demos_20/demo_ground_truth_wav/file1.wav" type="audio/wav">
-          </audio>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  -->
 
 </body>
 </html>
